@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Homepage from './Page/Homepage';
+// import Otppage from './Page/Otppage';
+import {BrowserRouter , Routes , Route} from 'react-router-dom'
+import Otppage from './Page/Otppage';
+import Success from './Page/Success';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <BrowserRouter>
+   <Routes>
+    <Route path="/" element={<Homepage/>}></Route>
+    <Route path="/otp-verify/:phone" element={<Otppage/>}></Route>
+    <Route path="/success" element={<Success/>}></Route>
+   </Routes>
+   </BrowserRouter>
+      
+      
     </div>
   );
 }
